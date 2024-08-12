@@ -83,6 +83,7 @@
   height: 6rem;
   padding: 1rem;
   border-radius: 8px;
+  color: var(--gray-100);
   line-height: 1.4;
   margin-top: 1rem;
 
@@ -114,4 +115,8 @@
 
 .commentForm button[type=submit]:hover {
     background: var(--green-300);
+}
+
+.commentList {
+    margin-top: 2rem;
 }

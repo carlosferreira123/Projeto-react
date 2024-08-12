@@ -2,11 +2,48 @@ import { Header } from './components/Header';
 import { Post } from './components/Post';
 import { Sidebar } from './components/Sidebar';
 
+
 import styles from './App.module.css';
 
 import './global.css'
 
 
+// author: { avatar_url: "", name: "", role: "" }
+// publishedAt: Date
+// Content: string
+
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'https://avatars.githubusercontent.com/u/122993323?v=4',
+      name: 'Carlos Alisson', 
+      role: 'Desenvolvedor front end'   
+    },
+    content: [
+     { type: 'paragraph', content: 'Fala galera',},
+     { type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur'},
+     { type: 'link', content: 'jane.design/doctorcare'}
+    ],
+    publishedAt: new Date ('2024-08-11 20:00:00'),
+  },
+
+
+{
+  id: 2,
+  author: {
+    avatarUrl: 'https://avatars.githubusercontent.com/u/122993323?v=4',
+    name: 'Thayanne Santos', 
+    role: 'Contabilidade'   
+  },
+  content: [
+   { type: 'paragraph', content: 'Fala galera',},
+   { type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur'},
+   { type: 'link', content: 'jane.design/doctorcare'}
+  ],
+  publishedAt: new Date ('2022-08-9 20:00:00'),
+},
+];
 
 export function App() {
   
@@ -19,14 +56,15 @@ export function App() {
      <Sidebar />
 
        <main>
-      <Post 
-       author = "Carlos Alisson" 
-       content = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, quasi tempore aspernatur facere illo tempora et, iste est fugit fuga similique reiciendis at vel esse. Voluptates sint atque accusantium totam."/>
-     
-     <Post
-       author = "Fernando Lima"
-       content = "Um novo post muito legal"
-       />
+          {posts.map(post => {
+            return (
+            <Post
+              author={post.author}
+              content={post.content}
+              publishedAt={post.publishedAt}  
+            />
+          )
+          })}
        </main>
      </div>
     

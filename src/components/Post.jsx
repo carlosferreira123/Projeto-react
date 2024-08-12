@@ -1,12 +1,19 @@
+
+import { Avatar } from './Avatar';
+import { Comment } from './Comment';
+
 import styles from './Post.module.css';
 
-export function Post() {
+
+export function Post(props) {
+  console.log(props);
+
     return (
     
     <article className={styles.post}>
       <header>
          <div className={styles.author}>
-            <img className={styles.avatar}src="https://avatars.githubusercontent.com/u/122993323?v=4" />
+            <Avatar hasBorder={true} src="https://avatars.githubusercontent.com/u/122993323?v=4"/>
             <div className={styles.authorInfo}>
                <strong>Carlos Alisson</strong>
                <span>Web Devolper</span> 
@@ -17,14 +24,7 @@ export function Post() {
       </header>
 
       <div className={styles.content}> 
-          <p> Fala Galera !</p>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi distinctio omnis, officia delectus, esse, iure possimus consequuntur minus itaque eveniet sed nobis facere natus nihil. Qui magnam voluptas nostrum quo.</p>
-          <p><a href="">Lorem ipsum dolor sit amet consectetur </a></p>
-          <p>
-            <a href="">#Lorem ipsum  </a> {' '}
-            <a href="">#Lorem ipsum  </a> {' '}
-            <a href="">#Lorem ipsum </a> {' '}
-          </p>
+         
       </div>
 
 
@@ -34,8 +34,15 @@ export function Post() {
          <textarea placeholder="Deixe um comentario"></textarea>
            
         <footer>
-        <button type="submit">Enviar</button>
+          <button type="submit">Enviar</button>
         </footer>
       </form>
+       
+       <div className={styles.commentList}>
+         <Comment /> 
+         <Comment />
+         <Comment />
+         
+      </div> 
     </article>
 )}
