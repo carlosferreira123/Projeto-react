@@ -5,7 +5,7 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 
-export function Post({ author }) {
+export function Post({ author, publisheadAt }) {
   
 
     return (
@@ -20,7 +20,10 @@ export function Post({ author }) {
             </div>
          </div>
 
-         <time title='11 de Maio ás 08:13h' dateTime='2022-05-11 08:13:30'>Publicado a 1h</time>
+         <time title='11 de Maio ás 08:13h' dateTime='2022-05-11 08:13:30'>Publicado a 1h
+          {publisheadAt.toString()}
+         </time>
+      
       </header>
 
       <div className={styles.content}> 
