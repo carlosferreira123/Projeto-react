@@ -16,7 +16,7 @@ const posts = [
   {
     id: 1,
     author: {
-      avatarUrl: 'https://avatars.githubusercontent.com/u/122993323?v=4',
+      vatarUrl: 'https://avatars.githubusercontent.com/u/122993323?v=4',
       name: 'Carlos Alisson', 
       role: 'Desenvolvedor front end'   
     },

@@ -5,8 +5,8 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 
-export function Post(props) {
-  console.log(props);
+export function Post({ author }) {
+  
 
     return (
     
@@ -15,8 +15,8 @@ export function Post(props) {
          <div className={styles.author}>
             <Avatar hasBorder={true} src="https://avatars.githubusercontent.com/u/122993323?v=4"/>
             <div className={styles.authorInfo}>
-               <strong>Carlos Alisson</strong>
-               <span>Web Devolper</span> 
+               <strong>{author.name}</strong>
+               <span>{author.role}</span> 
             </div>
          </div>
 
