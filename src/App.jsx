@@ -22,7 +22,7 @@ const posts = [
     },
     content: [
      { type: 'paragraph', content: 'Fala galera',},
-     { type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur'},
+     { type: 'paragraph', content: 'Subir mais um projeto, É um projeto com React e estou aprendendo como funciona seus components.'},
      { type: 'link', content: 'jane.design/doctorcare'}
     ],
     publishedAt: new Date ('2024-08-11 20:00:00'),
