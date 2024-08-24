@@ -1,15 +1,21 @@
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
+import { useState } from 'react';
 
 import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 
 import styles from './Post.module.css';
-import { LineSegment } from '@phosphor-icons/react';
+
 
 
 export function Post({ author, publishedAt, content }) {
-    const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'ás' HH:mm'h'", {
+   const [comments, setComments] = useState ([
+      1,
+      2,
+   ]) 
+   
+   const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'ás' HH:mm'h'", {
       locale: ptBR,
     }) 
 
@@ -17,6 +23,16 @@ export function Post({ author, publishedAt, content }) {
       locale: ptBR,
       addSuffix: true,
     }) 
+
+     function handleCreateNewComment() {
+      event.preventDefault()
+
+      setComments([1, 2, 3]);
+
+      comments.push(3);
+
+      
+     }
 
     return (
     
@@ -58,9 +74,9 @@ export function Post({ author, publishedAt, content }) {
       </form>
        
        <div className={styles.commentList}>
-         <Comment /> 
-         <Comment />
-         <Comment />
+         {comments.map(comment => {
+            return <Comment />
+         })}
          
       </div> 
     </article>
