@@ -33,7 +33,7 @@ const posts = [
   id: 2,
   author: {
     avatarUrl: 'https://avatars.githubusercontent.com/u/122993323?v=4',
-    name: 'Thayanne Santos', 
+    name: 'Santos', 
     role: 'Contabilidade'   
   },
   content: [
