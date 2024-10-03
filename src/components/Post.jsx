@@ -32,12 +32,24 @@ export function Post({ author, publishedAt, content }) {
       setNewCommentText('')
       
      }
+     
      function handleNewCommentChange() {
+      event.target.setCustomValidity('');
+
       setNewCommentText(event.target.value);
      }
 
-     function deleteComment(comment) {
-       console.log(`Deletar comentario ${comment}`)
+     function handleNewCommentInvalid() {
+       event.target.setCustomValidity('Esse campo é obrigatorio!')
+     }
+
+     function deleteComment(commentToDelete) {
+      // imutabilidade -> as variaveis não sofrem mutação, nós criamos um novo valor(um novo espaço na memória) 
+      const commentsWithoutDeletedOne = comments.filter (comment => {
+       return comment !== commentToDelete;
+      })
+
+      setComments(commentsWithoutDeletedOne);
      }
 
     return (
@@ -77,7 +89,8 @@ export function Post({ author, publishedAt, content }) {
          placeholder="Deixe um comentario"
          value={newCommentText}
          onChange={handleNewCommentChange}
-         
+         onInvalid={handleNewCommentInvalid}
+         required
          
          />
         
